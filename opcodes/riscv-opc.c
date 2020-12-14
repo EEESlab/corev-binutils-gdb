@@ -850,7 +850,6 @@ const struct riscv_opcode riscv_opcodes[] =
 {"cv.lw",   0, INSN_CLASS_COREV_POSTINC, "d,t(s!)",   MATCH_LWRRPOST,       MASK_LRRPOST,   match_opcode, 0},
 {"cv.lw",   0, INSN_CLASS_COREV_POSTINC, "d,t(s)",    MATCH_LWRR,           MASK_LRR,       match_opcode, 0},
 
-/* Store */
 /* Reg-immediate store with Post-Incrementing */
 {"cv.sb", 0, INSN_CLASS_COREV_POSTINC, "t,q(s)",  MATCH_SB,        MASK_SB,       match_opcode, INSN_DREF|INSN_1_BYTE},
 {"cv.sb", 0, INSN_CLASS_COREV_POSTINC, "t,q(s!)", MATCH_SBPOST,    MASK_SPOST,    match_opcode, 0},
@@ -866,6 +865,10 @@ const struct riscv_opcode riscv_opcodes[] =
 {"cv.sw", 0, INSN_CLASS_COREV_POSTINC, "t,q(s!)", MATCH_SWPOST,    MASK_SPOST,    match_opcode, 0},
 {"cv.sw", 0, INSN_CLASS_COREV_POSTINC, "t,d(s)",  MATCH_SWRR,      MASK_SRR,      match_opcode, 0},
 {"cv.sw", 0, INSN_CLASS_COREV_POSTINC, "t,d(s!)", MATCH_SWRRPOST,  MASK_SRRPOST,  match_opcode, 0},
+
+/* Immediate branching */
+/*{"cv.beqimm", 0, INSN_CLASS_COREV_BI, "s,b4,p", MATCH_BEQIMM, MASK_BEQIMM, match_opcode, INSN_CONDBRANCH},*/
+{"cv.beqimm", 0, INSN_CLASS_COREV_BI, "s,b4,p", MATCH_BEQIMM, MASK_BEQIMM, match_opcode, 0},
 
 /* Terminate the list.  */
 {0, 0, INSN_CLASS_NONE, 0, 0, 0, 0, 0}
