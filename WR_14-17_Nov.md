@@ -15,10 +15,10 @@ GAS
 
 | Category    | Start      | Now   		  | Delta      |
 | -----------:| ---------: | ---------:   | ---------: |
-| PASS        | 140        | 253          | +123       |
+| PASS        | -          | -            | +33        |
 | FAIL        | 0          | 7            | +7         |
 | XPASS       | -          | -            | -          |
-| XFAIL       | -          | -            | -          |
+| XFAIL       | -          | -            | +80        |
 | UNSUPPORTED | -          | -            | -          |
 | UNTESTED    | -          | -            | -          |
 | UNRESOLVED  | -          | -            | -          |
