@@ -1,3 +1,22 @@
+2020-12-14  Enrico Tabanelli, Nazareno Bruschi and Giuseppe Tagliavini  <enrico.tabanelli3@unibo.it>
+
+	* config/tc-riscv.c: Added CORE-V post-increment and register-indexed load/store support.
+	* config/tc-riscv.h: Likewise.
+
+2020-11-24  Jessica Mills  <jessica.mills@embecosm.com>
+
+	* doc/c-riscv.texi: Added details on CORE-V hardware loop,
+	multiply-accumulate and general ALU ops ISA options.
+
+2020-11-20  Pietra Ferreira  <pietra.ferreira@embecosm.com>
+
+	* config/tc-riscv.c: Added CORE-V general ALU operations support.
+
+2020-11-19  Jessica Mills  <jessica.mills@embecosm.com>
+
+	* config/tc-riscv.c: Fixed bug in hardware loop operand boundary
+	checks (b1 and b2).
+
 2020-11-11  Jessica Mills  <jessica.mills@embecosm.com>
 
 	* config/tc-riscv.c: Added CORE-V multiply accumulate support.
@@ -18,7 +37,7 @@
 
 2020-09-10  Pietra Ferreira  <pietra.ferreira@embecosm.com>
 
-	* config/tc-riscv.c: Added CORE-V harware loop support.
+	* config/tc-riscv.c: Added CORE-V hardware loop support.
 	* config/tc-riscv.h: Likewise.
 	* doc/c-riscv.texi: Noted Xcorev as additional ISA extension
 	 for CORE-V.

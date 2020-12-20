@@ -248,6 +248,9 @@ riscv_multi_subset_supports (enum riscv_insn_class insn_class)
     case INSN_CLASS_COREV_MAC:
       return riscv_subset_supports ("xcorevmac") || riscv_subset_supports ("xcorev");
 
+    case INSN_CLASS_COREV_ALU:
+      return riscv_subset_supports ("xcorevalu") || riscv_subset_supports ("xcorev");
+
     case INSN_CLASS_COREV_POSTINC:
       return riscv_subset_supports ("xcorevpostinc") || riscv_subset_supports ("xcorev");
 
@@ -1016,6 +1019,11 @@ validate_riscv_insn (const struct riscv_opcode *opc, int length)
       used_bits |= ENCODE_CV_BI_IMM5(-1U);
       ++p; break;
     }
+	else if (*p == 'i')
+	  {
+	    used_bits |= ENCODE_CV_ALU_UIMM5(-1U);
+	    ++p; break;
+	  }
 	break;
       case '1': break;
       case 'F': /* funct */
@@ -2410,7 +2418,8 @@ riscv_ip (char *str, struct riscv_cl_insn *ip, expressionS *imm_expr,
 	         b1: pc rel 12 bits offset for cv.starti and cv.endi
 	             sign-extended immediate as pc rel displacement for hwloop
 	         b2: pc rel 5 bits unsigned offset for cv.setupi
-           b4: 5 bits signed immediate bits[24..20] */
+           b4: 5 bits signed immediate bits[24..20]
+		       bi: 5 bits unsigned offset for cv.clip and cv.clipu ALU luimm5 [24...20]	 */
 	    case 'b':
 	      if (args[1] == '1')
 		{
@@ -2424,7 +2433,7 @@ riscv_ip (char *str, struct riscv_cl_insn *ip, expressionS *imm_expr,
 		  if (imm_expr->X_op == O_constant)
 		    {
 		      if (imm_expr->X_add_number < 0 ||
-			  ((imm_expr->X_add_number>>1) > 0x0FFF))
+			  ((imm_expr->X_add_number>>1) > 0x07FF))
 			as_bad (_("%ld constant out of range for %s, range:[0, %d]"),
 				imm_expr->X_add_number, ip->insn_mo->name, 0xFFE);
 		      if ((imm_expr->X_add_number % 2) == 1)
@@ -2451,7 +2460,7 @@ riscv_ip (char *str, struct riscv_cl_insn *ip, expressionS *imm_expr,
 		  if (imm_expr->X_op == O_constant)
 		    {
 		      if (imm_expr->X_add_number < 0 ||
-			  ((imm_expr->X_add_number>>1) > 31))
+			  ((imm_expr->X_add_number>>1) > 0xF))
 			as_bad (_("%ld constant out of range for "
 				  "cv.setupi, range:[0, %d]"),
 				imm_expr->X_add_number, 0x1E);
@@ -2485,6 +2494,15 @@ riscv_ip (char *str, struct riscv_cl_insn *ip, expressionS *imm_expr,
       ip->insn_opcode |= ENCODE_CV_BI_IMM5 (imm_expr->X_add_number);
       ++args;
     }
+	      else if (args[1] == 'i')
+		{
+		  my_getExpression (imm_expr, s);
+		  check_absolute_expr (ip, imm_expr, FALSE);
+		  s = expr_end;
+		  if (imm_expr->X_add_number<0 || imm_expr->X_add_number>31) break;
+		  ip->insn_opcode |= ENCODE_CV_ALU_UIMM5 (imm_expr->X_add_number);
+		  ++args;
+		}
 	      else
 		{
 		  my_getExpression (imm_expr, s);

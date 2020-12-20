@@ -116,6 +116,8 @@ static const char * const riscv_pred_succ[16] =
   (RV_X(x, 20, 12))
 #define EXTRACT_CV_MAC_UIMM5(x) \
   (RV_X(x, 25, 5))
+#define EXTRACT_CV_ALU_UIMM5(x) \
+  (RV_X(x, 20, 5))
 
 #define ENCODE_ITYPE_IMM(x) \
   (RV_X(x, 0, 12) << 20)
@@ -163,6 +165,8 @@ static const char * const riscv_pred_succ[16] =
   (RV_X(x, 0, 1) << 7)
 #define ENCODE_CV_MAC_UIMM5(x) \
   (RV_X(x, 0, 5) << 25)
+#define ENCODE_CV_ALU_UIMM5(x) \
+  (RV_X(x, 0, 5) << 20)
 #define ENCODE_CV_BI_IMM5(x) \
   (RV_X(x, 0, 5) << 20)
 
@@ -348,6 +352,8 @@ enum riscv_insn_class
    INSN_CLASS_COREV_MAC,
    INSN_CLASS_COREV_POSTINC,
    INSN_CLASS_COREV_BI
+   INSN_CLASS_COREV_ALU,
+   INSN_CLASS_COREV_POSTINC
   };
 
 /* This structure holds information for a particular instruction.  */

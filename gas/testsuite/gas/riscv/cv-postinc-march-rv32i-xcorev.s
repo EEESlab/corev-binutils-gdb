@@ -24,4 +24,3 @@ target:
 	cv.sb t6, 10(t1!)
 	cv.sh t3, 80(t5!)
 	cv.sw t1, 20(t4!)
-	
