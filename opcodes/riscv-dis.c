@@ -293,6 +293,12 @@ print_insn_args (const char *d, insn_t l, bfd_vma pc, disassemble_info *info)
 	      ++d;
 	      break;
 	    }
+	  else if (d[1] == '4')
+	  	{
+          print (info->stream, "%d", ((int) EXTRACT_CV_BI_IMM5 (l)<<27)>>27);
+          ++d;
+          break;
+        }
 	/* Fall through.  */
 	case 's':
 	  if ((l & MASK_JALR) == MATCH_JALR)

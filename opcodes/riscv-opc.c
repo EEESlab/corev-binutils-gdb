@@ -867,6 +867,9 @@ const struct riscv_opcode riscv_opcodes[] =
 {"cv.sw", 0, INSN_CLASS_COREV_POSTINC, "t,d(s)",  MATCH_SWRR,      MASK_SRR,      match_opcode, 0},
 {"cv.sw", 0, INSN_CLASS_COREV_POSTINC, "t,d(s!)", MATCH_SWRRPOST,  MASK_SRRPOST,  match_opcode, 0},
 
+/* Immediate Branching Operations */
+{"cv.bneimm", 0, INSN_CLASS_COREV_BI, "s,b4,p", MATCH_BNEIMM, MASK_BNEIMM, match_opcode, 0},
+
 /* Terminate the list.  */
 {0, 0, INSN_CLASS_NONE, 0, 0, 0, 0, 0}
 };
