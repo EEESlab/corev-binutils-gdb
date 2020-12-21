@@ -2490,7 +2490,9 @@ riscv_ip (char *str, struct riscv_cl_insn *ip, expressionS *imm_expr,
       my_getExpression (imm_expr, s);
       check_absolute_expr (ip, imm_expr, FALSE);
       s = expr_end;
-      if (imm_expr->X_add_number<-16 || imm_expr->X_add_number>15) break;
+      if (imm_expr->X_add_number<-16 || imm_expr->X_add_number>15)
+        as_bad(_("immediate value must be 5-bit signed. %ld is out of range"),
+        imm_expr->X_add_number);
       ip->insn_opcode |= ENCODE_CV_BI_IMM5 (imm_expr->X_add_number);
       ++args;
     }
