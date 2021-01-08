@@ -1,5 +1,7 @@
 target:
-	cv.beqimm t0, -16, 4095
-	cv.beqimm t4, -8, 3572
-	cv.beqimm t3, 5, 2902
+	cv.beqimm t0, -8, target+0x8
+	cv.beqimm t4, 5, target
+	cv.beqimm t2, -16, target+0x4
+end:
+	cv.beqimm t1, 2, end	
 	

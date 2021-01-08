@@ -1,2 +1,2 @@
 .*: Assembler messages:
-.*: Error: illegal operands `cv.beqimm t0,4,4096
+.*: Error: illegal operands `cv.beqimm t0,4,1000

@@ -1,2 +1,2 @@
 .*: Assembler messages:
-.*: Error: illegal operands `cv.beqimm t0,16,255
+.*: Error: immediate value must be 5-bit signed. 16 is out of range

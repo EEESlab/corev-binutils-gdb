@@ -1,2 +1,2 @@
 .*: Assembler messages:
-.*: Error: illegal operands `cv.beqimm t0,t1,43
+.*: Error: Instruction cv.beqimm requires absolute expression
