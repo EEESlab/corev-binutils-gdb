@@ -941,14 +941,12 @@
 #define MATCH_SWPOST   0x202b
 
 /* Reg-Reg Post-Incrementing stores */
-//#define MASK_SRRPOST   0xc0007fff
 #define MASK_SRRPOST   0xfe00707f
 #define MATCH_SBRRPOST 0x0000402b
 #define MATCH_SHRRPOST 0x0000502b
 #define MATCH_SWRRPOST 0x0000602b
 
 /* Reg-Reg stores */
-//#define MASK_SRR       0xc0007fff
 #define MASK_SRR       0xfe00707f
 #define MATCH_SBRR     0x00004023
 #define MATCH_SHRR     0x00005023
@@ -1019,14 +1017,12 @@
 #define MATCH_SWPOST   0x202b
 
 /* Reg-Reg Post-Incrementing stores */
-//#define MASK_SRRPOST   0xc0007fff
 #define MASK_SRRPOST   0xfe00707f
 #define MATCH_SBRRPOST 0x0000402b
 #define MATCH_SHRRPOST 0x0000502b
 #define MATCH_SWRRPOST 0x0000602b
 
 /* Reg-Reg stores */
-//#define MASK_SRR       0xc0007fff
 #define MASK_SRR       0xfe00707f
 #define MATCH_SBRR     0x00004023
 #define MATCH_SHRR     0x00005023

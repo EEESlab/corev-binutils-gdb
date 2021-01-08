@@ -2235,7 +2235,7 @@ riscv_ip (char *str, struct riscv_cl_insn *ip, expressionS *imm_expr,
 	    case ')':
 	    case '[':
 	    case ']':
-      case '!':
+	    case '!':
 	      if (*s++ == *args)
 		continue;
 	      break;
