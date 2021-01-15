@@ -7,5 +7,5 @@
 Disassembly of section .text:
 
 0+000 <target>:
-[ 	]+0:[ 	]+0142b963[ 	]+cv.bneimm[ 	]+t0,-12,12 +<target\+0x12>
-[ 	]+4:[ 	]+0083b063[ 	]+cv.bneimm[ 	]+t2,8,4 +<target\+0x4>
+[ 	]+0:[ 	]+0213a063[ 	]+cv.beqimm[ 	]+t2,1,20 +<target\+0x20>
+[ 	]+4:[ 	]+0102b263[ 	]+cv.bneimm[ 	]+t0,-16,8 +<target\+0x8>

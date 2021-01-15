@@ -170,7 +170,7 @@ static const char * const riscv_pred_succ[16] =
 #define ENCODE_CV_ALU_UIMM5(x) \
   (RV_X(x, 0, 5) << 20)
 #define ENCODE_CV_BI_IMM5(x) \
-  (RV_X(x, 0, 5) << 20)  
+  (RV_X(x, 0, 5) << 20)
 
 #define VALID_ITYPE_IMM(x) (EXTRACT_ITYPE_IMM(ENCODE_ITYPE_IMM(x)) == (x))
 #define VALID_STYPE_IMM(x) (EXTRACT_STYPE_IMM(ENCODE_STYPE_IMM(x)) == (x))

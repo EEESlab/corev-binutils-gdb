@@ -1,5 +1,4 @@
-# xcorev march option works for all CORE-V bi extensions
+# xcorev march option works for all CORE-V immediate branching extensions
 target:
-	cv.bneimm t0, -12,  target+0x12
-	cv.bneimm t2, 8,  target+0x4
-	
+	cv.beqimm t2, 1, target+0x20
+	cv.bneimm t0, -16, target+0x8
