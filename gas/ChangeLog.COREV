@@ -1,3 +1,10 @@
+2021-01-22  Nazareno Bruschi  <nazareno.bruschi@unibo.it>
+
+	* config/tc-riscv.c (riscv_multi_subset_supports): Add immediate
+	branching instruction class.
+	(validate_riscv_insn, riscv_ip): Add immediate branching 
+	operand and modify PC-relative offset operand.
+
 2020-12-14  Enrico Tabanelli  <enrico.tabanelli3@unibo.it>
 
 	* config/tc-riscv.c: Added case "!" for CORE-V post-increment 

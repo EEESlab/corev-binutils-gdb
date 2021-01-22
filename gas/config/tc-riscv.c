@@ -2585,6 +2585,10 @@ riscv_ip (char *str, struct riscv_cl_insn *ip, expressionS *imm_expr,
 	    branch:
 	      *imm_reloc = BFD_RELOC_12_PCREL;
 	      my_getExpression (imm_expr, s);
+	      if ((imm_expr->X_op != O_symbol && imm_expr->X_op != O_constant)
+	        || reg_lookup (&s, RCLASS_GPR, &regno))
+	        as_bad(_("%s immediate value must be a constant or label"),
+	        ip->insn_mo->name);
 	      s = expr_end;
 	      continue;
 

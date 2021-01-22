@@ -1,4 +1,4 @@
-# Comparison immediate must be in range [-16, +15]
+# Second operand must an immediate in range [-16, +15]
 target:
 	cv.beqimm t0, -17, target
 	cv.beqimm t2, -32, target+0x4

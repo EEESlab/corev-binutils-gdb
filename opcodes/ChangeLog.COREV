@@ -1,3 +1,10 @@
+2021-01-22  Nazareno Bruschi  <nazareno.bruschi@unibo.it>
+
+	* riscv-dis.c (print_insn_args): Add immediate branching
+	operand. 
+	* riscv-opc.c (riscv_opcodes): Add immediate branching
+	opcodes. 
+
 2020-12-14  Enrico Tabanelli  <enrico.tabanelli3@unibo.it>
 
 	* riscv-dis.c: Added case "!" for CORE-V post-increment 
