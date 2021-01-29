@@ -56,6 +56,8 @@ multiply-accumulate: @samp{Xcorevmac}
 @item
 general ALU operations: @samp{Xcorevalu}
 @item
+Post-incrementing and reg-reg load/store: @samp{Xcorevpostinc}
+@item
 immediate branching: @samp{Xcorevbi}
 @end itemize
 

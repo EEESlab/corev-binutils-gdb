@@ -3,37 +3,43 @@
 	* riscv-dis.c (print_insn_args): Add immediate branching
 	operand. 
 	* riscv-opc.c (riscv_opcodes): Add immediate branching
-	opcodes. 
+	opcodes.
+
+2021-01-11  Jessica Mills  <jessica.mills@embecosm.com>
+
+	* riscv-opc.h (MATCH_MACS, MATCH_MACHHS, MATCH_MACU)
+	(MATCH_MACHHU): Remove obsolete matches.
+	(MASK_MULMAC): Rename mask as MASK_MULSH
 
 2020-12-14  Enrico Tabanelli  <enrico.tabanelli3@unibo.it>
 
-	* riscv-dis.c: Added case "!" for CORE-V post-increment 
-	and register-indexed load/store in print_insn_args() and 
-	validate_riscv_insn().
-	* riscv-opc.c: Added in struct riscv_opcodes post-increment
-	and register-indexed load/store opcodes.
+	* riscv-dis.c (print_insn_args): Add post-increment symbol. 
+	* riscv-opc.c (riscv_opcodes): Add post-increment and 
+	register-indexed load/store opcodes.
 
 2020-11-20  Pietra Ferreira  <pietra.ferreira@embecosm.com>
 
-	* riscv-dis.c: Added CORE-V general ALU operations support.
-	* riscv-opc.c: Likewise.
+	* riscv-dis.c (print_insn_args): Add general ALU ops operands.
+	* riscv-opc.c (riscv_opcodes): Add general ALU ops opcodes.
 
 2020-11-11  Jessica Mills  <jessica.mills@embecosm.com>
 
-	* riscv-dis.c: Added CORE-V multiply accumulate support.
-	* riscv-opc.c: Likewise.
+	* riscv-dis.c (print_insn_args): Add multiply accumulate operands.
+	* riscv-opc.c (riscv_opcodes): Add multiply accumulate opcodes.
 
 2020-11-10  Mary Bennett  <mary.bennett@embecosm.com>
 
-	* riscv-opc.c (print_insn_args): Renamed macros for clarity -
+	* riscv-opc.c (print_insn_args): Rename macros for clarity -
 	EXTRACT_I1TYPE_UIMM-> EXTRACT_CV_HWLP_UIMM5
 	EXTRACT_ITYPE_UIMM -> EXTRACT_CV_HWLP_UIMM12
 
 2020-10-08  Mary Bennett  <mary.bennett@embecosm.com>
 
-	* riscv-opc.c: Added support for corevhwlp.
+	* riscv-opc.c (riscv_opcodes): Amend instruction class for hardware
+	loop opcodes -
+	INSN_CLASS_COREV -> INSN_CLASS_COREV_HWLP
 
 2020-09-10  Pietra Ferreira  <pietra.ferreira@embecosm.com>
 
-	* riscv-dis.c: Added CORE-V hardware loop support.
-	* riscv-opc.c: Likewise.
+	* riscv-dis.c (print_insn_args): Add hardware loop operands.
+	* riscv-opc.c (riscv_opcodes): Add hardware loop opcodes.

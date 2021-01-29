@@ -1,4 +1,4 @@
-# "t" operand must be of type register
+# Source operand must be a register
 target:
 	cv.sb 12, 10(t1)
 	cv.sb 14, 20(t2!)

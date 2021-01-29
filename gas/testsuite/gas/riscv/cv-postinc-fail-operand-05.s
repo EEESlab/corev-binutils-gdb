@@ -1,4 +1,4 @@
-# Immediate value must be in range [-2048, 2047]
+# Offset operand must be in range [-2048, 2047]
 target:
 	cv.sb t2, -2049(t1)
 	cv.sb t2, -2049(t1!)

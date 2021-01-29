@@ -1,4 +1,4 @@
-# march not specified 
+# Absence of xcorev or xcorevpostinc march option disables all CORE-V postinc extensions
 target:
 	cv.lb t4, t2(t0)
 	cv.lbu t6, t1(t4)

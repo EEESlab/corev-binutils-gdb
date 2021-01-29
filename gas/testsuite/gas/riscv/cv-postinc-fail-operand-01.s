@@ -1,11 +1,5 @@
-# "d" operand must be of type register
+# Destination operand must be a register
 target:
-	cv.sb t1, t3(20)
-	cv.sb t2, t4(24!)
-	cv.sh t3, t5(40)
-	cv.sh t4, t6(12!)
-	cv.sw t5, t1(4)
-	cv.sw t6, t2(16!)
 	cv.lb 20, 10(t1)
 	cv.lb 32, 15(t2!)
 	cv.lb 40, t2(t3)

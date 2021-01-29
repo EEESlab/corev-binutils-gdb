@@ -1,10 +1,4 @@
 .*: Assembler messages:
-.*: Error: illegal operands `cv.sb t1,t3\(20\)'
-.*: Error: illegal operands `cv.sb t2,t4\(24\!\)'
-.*: Error: illegal operands `cv.sh t3,t5\(40\)'
-.*: Error: illegal operands `cv.sh t4,t6\(12\!\)'
-.*: Error: illegal operands `cv.sw t5,t1\(4\)'
-.*: Error: illegal operands `cv.sw t6,t2\(16\!\)'
 .*: Error: illegal operands `cv.lb 20,10\(t1\)'
 .*: Error: illegal operands `cv.lb 32,15\(t2\!\)'
 .*: Error: illegal operands `cv.lb 40,t2\(t3\)'
