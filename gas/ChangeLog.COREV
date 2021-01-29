@@ -4,6 +4,8 @@
 	branching instruction class.
 	(validate_riscv_insn, riscv_ip): Add immediate branching 
 	operand and modify PC-relative offset operand.
+	* doc/c-riscv.texi: Add details on CORE-V immediate
+	branching ops ISA options.
 
 2020-12-14  Enrico Tabanelli  <enrico.tabanelli3@unibo.it>
 

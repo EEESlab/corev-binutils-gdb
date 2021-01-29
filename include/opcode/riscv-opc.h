@@ -981,10 +981,11 @@
 #define MATCH_SWRR     0x00006023
 
 /* Immediate Branching */
-#define MASK_BNEIMM     0x0000707f
 #define MATCH_BNEIMM    0x00003063
-#define MASK_BEQIMM	0x707f
-#define MATCH_BEQIMM	0x2063
+#define MATCH_BEQIMM    0x2063
+
+#define MASK_BEQIMM     0x707f
+#define MASK_BNEIMM     0x0000707f
 
 #ifdef DECLARE_INSN
 DECLARE_INSN(slli_rv32, MATCH_SLLI_RV32, MASK_SLLI_RV32)
